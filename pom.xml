@@ -63,9 +63,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:git://github.com/hazelcast/hazelcast-wm.git</connection>
-        <developerConnection>scm:git:git@github.com:hazelcast/hazelcast-wm.git</developerConnection>
-        <url>https://github.com/hazelcast/hazelcast/</url>
+        <connection>scm:git:git://github.com/jd185368/cxp-hazelcast-wm.git</connection>
+        <developerConnection>scm:git:git@github.com:jd185368/cxp-hazelcast-wm.git</developerConnection>
+        <url>https://github.com/jd185368/cxp-hazelcast-wm.git</url>
     </scm>
     <developers>
         <developer>
@@ -82,22 +82,22 @@
 
     <distributionManagement>
         <repository>
-            <id>release-repository</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>cxp-releases</id>
+            <name>CxP Release Repository</name>
+            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-releases</url>
         </repository>
         <snapshotRepository>
-            <id>snapshot-repository</id>
-            <name>Maven2 Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
+            <id>cxp-snapshots</id>
+            <name>CxP Snapshot Repository</name>
+            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-snapshots</url>
         </snapshotRepository>
     </distributionManagement>
 
     <repositories>
         <repository>
-            <id>snapshot-repository</id>
-            <name>Maven2 Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>cxp-snapshots</id>
+            <name>CxP Snapshot Repository</name>
+            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-snapshots</url>
         </repository>
     </repositories>
     
@@ -572,7 +572,7 @@
         <profile>
             <id>master</id>
             <properties>
-                <hazelcast.version>4.1-SNAPSHOT</hazelcast.version>
+                <hazelcast.version>4.0.1</hazelcast.version>
             </properties>
             <dependencies>
                 <dependency>
