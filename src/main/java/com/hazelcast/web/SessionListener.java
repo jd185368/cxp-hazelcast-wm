@@ -34,6 +34,7 @@ public class SessionListener implements HttpSessionListener {
     }
 
     public void sessionDestroyed(HttpSessionEvent event) {
+        LOGGER.finest("Entering SessionListener.sessionDestroyed()");
         HttpSession session = event.getSession();
         ServletContext servletContext = session.getServletContext();
         WebFilter webFilter = (WebFilter) servletContext.getAttribute(WebFilter.class.getName());
@@ -43,5 +44,6 @@ public class SessionListener implements HttpSessionListener {
         } else {
             webFilter.destroyOriginalSession(session);
         }
+        LOGGER.finest("Leaving SessionListener.sessionDestroyed()");
     }
 }
