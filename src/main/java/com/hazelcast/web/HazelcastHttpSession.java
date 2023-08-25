@@ -177,12 +177,14 @@ public class HazelcastHttpSession implements HttpSession {
     }
 
     public void invalidate() {
+        LOGGER.finest("Entering invalidate()");
         // we must invalidate hazelcast session first
         // invalidating original session will trigger another
         // invalidation as our SessionListener will be triggered.
         webFilter.destroySession(this, true);
         originalSession.invalidate();
         invalidatedOriginalSessionId = originalSession.getId();
+        LOGGER.finest("Leaving invalidate()");
     }
 
     public boolean isNew() {
@@ -248,8 +250,10 @@ public class HazelcastHttpSession implements HttpSession {
     }
 
     void destroy(boolean invalidate) {
+        LOGGER.finest("Entering destroy(invalidate) id: " + id + " , invalidate: " + invalidate);
         valid = false;
         webFilter.getClusteredSessionService().deleteSession(id, invalidate);
+        LOGGER.finest("Leaving destroy(invalidate)");
     }
 
     public boolean isValid() {

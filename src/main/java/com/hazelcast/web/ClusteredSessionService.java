@@ -268,8 +268,10 @@ public class ClusteredSessionService {
     }
 
     private void doDeleteSession(String sessionId, boolean invalidate) throws Exception {
+        LOGGER.finest("Entering doDeleteSession() id: " + sessionId + " , invalidate: " + invalidate);
         DeleteSessionEntryProcessor entryProcessor = new DeleteSessionEntryProcessor(invalidate);
         executeOnKey(sessionId, entryProcessor);
+        LOGGER.finest("Leaving doDeleteSession()");
     }
 
     /**

@@ -14,10 +14,10 @@
   --><project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0          http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     
-    <name>hazelcast-wm</name>
+    <name>cxp-hazelcast-wm</name>
     <groupId>com.hazelcast</groupId>
-    <artifactId>hazelcast-wm</artifactId>
-    <version>4.0</version>
+    <artifactId>cxp-hazelcast-wm</artifactId>
+    <version>4.0.1</version>
     <packaging>jar</packaging>
     <description>Hazelcast In-Memory DataGrid Web Module Plugin</description>
     <url>http://www.hazelcast.com/</url>
@@ -63,9 +63,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:git://github.com/hazelcast/hazelcast-wm.git</connection>
-        <developerConnection>scm:git:git@github.com:hazelcast/hazelcast-wm.git</developerConnection>
-        <url>https://github.com/hazelcast/hazelcast/</url>
+        <connection>scm:git:git://github.com/jd185368/cxp-hazelcast-wm.git</connection>
+        <developerConnection>scm:git:git@github.com:jd185368/cxp-hazelcast-wm.git</developerConnection>
+        <url>https://github.com/jd185368/cxp-hazelcast-wm.git</url>
     </scm>
     <developers>
         <developer>
@@ -82,24 +82,11 @@
 
     <distributionManagement>
         <repository>
-            <id>release-repository</id>
-            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2</url>
+            <id>cxp-releases</id>
+            <name>CxP Release Repository</name>
+            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-releases</url>
         </repository>
-        <snapshotRepository>
-            <id>snapshot-repository</id>
-            <name>Maven2 Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <uniqueVersion>false</uniqueVersion>
-        </snapshotRepository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>snapshot-repository</id>
-            <name>Maven2 Snapshot Repository</name>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-        </repository>
-    </repositories>
     
     <build>
         <plugins>
@@ -572,7 +559,7 @@
         <profile>
             <id>master</id>
             <properties>
-                <hazelcast.version>4.1-SNAPSHOT</hazelcast.version>
+                <hazelcast.version>4.0.1</hazelcast.version>
             </properties>
             <dependencies>
                 <dependency>
