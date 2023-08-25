@@ -86,20 +86,7 @@
             <name>CxP Release Repository</name>
             <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-releases</url>
         </repository>
-        <snapshotRepository>
-            <id>cxp-snapshots</id>
-            <name>CxP Snapshot Repository</name>
-            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-snapshots</url>
-        </snapshotRepository>
     </distributionManagement>
-
-    <repositories>
-        <repository>
-            <id>cxp-snapshots</id>
-            <name>CxP Snapshot Repository</name>
-            <url>https://ncr.jfrog.io/artifactory/fsg-ess-maven-snapshots</url>
-        </repository>
-    </repositories>
     
     <build>
         <plugins>
